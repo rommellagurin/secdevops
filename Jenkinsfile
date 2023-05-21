@@ -9,7 +9,10 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'docker ps'
+        sshagent(credentials: ['your_ssh_credentials_id']) {
+            sh 'ssh rommellagurin@192.168.64.2'
+            sh 'ssh rommellagurin@192.168.64.2'
+        }
       }
     }
   }
